@@ -43,7 +43,7 @@ pub async fn start_sandbox(
         return Ok(format!("http://{}", addr));
     }
 
-    let host = host.unwrap_or("127.0.0.1".to_string());
+    let host = host.unwrap_or("0.0.0.0".to_string());
     let (listener, port, derived) = bind_sandbox_port(project_id, &host)
         .await
         .context("Failed to bind to port")?;
